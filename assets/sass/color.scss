@@ -1,0 +1,35 @@
+@mixin defineColor($class, $color) {
+    .c-#{$class} {
+        color: $color !important;
+    }
+    .c-#{$class}-event:hover,
+    .c-#{$class}-event:active,
+    .c-#{$class}-event:focus {
+        color: $color !important;
+    }
+    .bgc-#{$class} {
+        background-color: $color !important;
+    }
+    .bgc-#{$class}-event:hover,
+    .bgc-#{$class}-event:active,
+    .bgc-#{$class}-event:focus {
+        background-color: $color !important;
+    }
+    .bdc-#{$class} {
+        border-color: $color !important;
+    }
+    .bdc-#{$class}-event:hover,
+    .bdc-#{$class}-event:active,
+    .bdc-#{$class}-event:focus {
+        border-color: $color !important;
+    }
+}
+
+// @include defineColor('color', $color);
+@include defineColor('vermelho', $vermelho);
+@include defineColor('verde', $verde);
+@include defineColor('roxo', $roxo);
+@include defineColor('rosa', $rosa);
+@include defineColor('amarelo', $amarelo);
+@include defineColor('preto', $preto);
+@include defineColor('vermelhoh', $vermelhoh);

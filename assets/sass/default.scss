@@ -1,0 +1,504 @@
+    @media screen and (min-width: $xs) {
+        section {
+            padding: 40px 0px;
+        }
+        h1 {
+            font-size: 39.8228px;
+            line-height: 41px;
+        }
+        h2 {
+            font-size: 40px;
+            line-height: 40px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 18px;
+        }
+        .caption {
+            font-size: 15px;
+            line-height: 43px;
+        }
+        h3,
+        .h3 {
+            font-size: 20px;
+            line-height: 24px;
+            &.voucherh3 {
+                font-size: 30px;
+            }
+        }
+        #header {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: top;
+            background-size: cover;
+            background-image: url('../img/section-header.png');
+            padding-top: 0px;
+            .row {
+                min-height: 100vh;
+            }
+        }
+        .risco {
+            position: relative;
+            display: inline-block;
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: -5px;
+                width: 319px;
+                height: 51px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-image: url('../img/rabisco.png');
+            }
+        }
+        #video {
+            background-attachment: scroll;
+            background-color: $vermelho;
+            .row {
+                //min-height: 100vh;
+            }
+        }
+        .topo {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            left: 0px;
+            z-index: 5;
+        }
+        .botao {
+            cursor: pointer;
+            width: 100%;
+            box-shadow: -8px 2px 30px -10px rgba(255, 255, 255, 0.3%);
+            letter-spacing: 2px;
+            position: relative;
+            border: 2px solid $vermelho;
+            border-radius: 50px;
+            padding: 12px 17px;
+            text-align: left;
+            font-size: 17px;
+            .texto {
+                position: relative;
+                z-index: 10;
+            }
+            .interno {
+                position: absolute;
+                border-radius: 50px;
+                top: 50%;
+                left: 0px;
+                height: 0px;
+                z-index: 0;
+                height: 0px;
+                background-color: $vermelho;
+                width: 0px;
+            }
+            &.b-preto {
+                background-color: $preto;
+                border: 2px solid $preto;
+                &:hover {
+                    border: 2px solid $vermelho;
+                }
+            }
+            &:hover {
+                transition: 0.2s;
+                box-shadow: -8px 2px 64px -14px rgba(255, 255, 255, 0.30);
+                .interno {
+                    width: calc(100% + 4px);
+                    height: calc(100% + 4px);
+                    transition: width 0.8s, height 0.2s, top 0.2s;
+                    top: -2px;
+                    left: -2px;
+                }
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                background-image: url('../img/icon/seta-btn.svg');
+                background-size: cover;
+                width: 37px;
+                height: 35px;
+                top: 7px;
+                right: 20px;
+            }
+        }
+        .setinha {
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            padding-left: 44px;
+            color: rgba(255, 255, 255, 0.7%);
+            &:after {
+                content: '';
+                position: absolute;
+                background-repeat: no-repeat;
+                background-image: url('../img/icon/seta-texto.svg');
+                background-size: cover;
+                width: 24px;
+                height: 30px;
+                top: -3px;
+                left: 7px;
+            }
+        }
+        .input-modal {
+            background-color: white;
+            border: 4px solid transparent;
+            box-shadow: unset;
+            color: $preto;
+            padding: 20px 19px;
+            width: 100%;
+            border-radius: 10px;
+            font-size: 18px;
+            &:focus,
+            &:active {
+                outline: none;
+                box-shadow: unset;
+            }
+             ::placeholder {
+                opacity: 0.7;
+            }
+            &.valid {
+                border-color: $roxo;
+            }
+            &.erro {
+                border-color: $vermelho;
+            }
+        }
+        .parte {
+            width: 0px;
+            height: 0px;
+            overflow: hidden;
+            opacity: 0;
+            &.active {
+                transition: 1s opacity;
+                transition-delay: 0.2ms;
+                width: 100%;
+                opacity: 1;
+                height: auto;
+            }
+        }
+        .voucher {
+            h3 {
+                padding: 11px 10px;
+                background-color: white;
+            }
+        }
+        .erro-local {
+            width: 0px;
+            height: 0px;
+            overflow: hidden;
+            opacity: 0;
+            &.active {
+                width: auto;
+                height: auto;
+                opacity: 1;
+                transition: opacity 0.5s;
+                transition-delay: 50ms;
+            }
+        }
+        .tremendo {
+            animation: tremer 0.1s 4;
+            animation-play-state: running;
+        }
+        #popup {
+            padding: 0px;
+            position: fixed;
+            z-index: 200;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: width 0.1s, height 0.1s, opacity 0.3s;
+            transition-delay: 300ms, 300ms, 0ms;
+            &.active {
+                width: 100%;
+                height: calc(100%);
+                opacity: 1;
+                transition: opacity 0.2s;
+                transition-delay: 50ms;
+                overflow: auto;
+                //overflow: auto;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+        }
+        .conteudo {
+            background-color: $amarelo;
+            padding: 0px;
+            height: auto;
+            min-height: 100vh;
+            padding-bottom: 100px;
+            .estrutura {
+                width: 0px;
+                height: 0px;
+                overflow: hidden;
+                opacity: 0;
+                &.active {
+                    transition: 1s opacity;
+                    transition-delay: 0.2ms;
+                    padding: 35px 0px;
+                    width: 100%;
+                    opacity: 1;
+                    height: auto;
+                }
+            }
+            &.win {
+                background-image: url('../img/win-mob.png');
+                background-position: top -30px center;
+                background-repeat: no-repeat;
+                padding-bottom: 0px;
+            }
+        }
+        .respondeu {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 19px 48px;
+            border-radius: 5px;
+        }
+        .menu-aberto {
+            position: fixed;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            opacity: 0;
+            transition: 0.2s;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            .row {
+                //align-content: baseline;
+                align-items: flex-start;
+            }
+            &.active {
+                width: 100vw;
+                height: 100vh;
+                background-color: $preto;
+                opacity: 1;
+                z-index: 200;
+            }
+        }
+        label.error {
+            color: $vermelho;
+            text-align: left;
+            padding-top: 5px;
+            font-weight: 600;
+            position: absolute;
+            width: 100%;
+            left: 0px;
+            bottom: -17px;
+            font-size: 13px;
+        }
+        #fundo {
+            padding: 0px;
+        }
+        footer {
+            background-color: black;
+            padding: 25px 0px;
+            z-index: 100;
+        }
+        .text {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            left: 0;
+        }
+    }
+    
+    @media screen and (min-width: $sm) {}
+    
+    @media screen and (min-width: $md) {
+        h1 {
+            font-size: 53px;
+            line-height: 58px;
+            &.s {
+                font-size: 56px;
+            }
+        }
+        h2 {
+            font-size: 50px;
+            line-height: 53px;
+        }
+        h3,
+        .h3 {
+            font-size: 30px;
+            line-height: 48px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 24px;
+        }
+        .cta {
+            font-size: 25px;
+            line-height: 24px;
+        }
+        .caption {
+            font-size: 20px;
+            line-height: 43px;
+        }
+        #header {
+            background-image: url('../img/section-header.png');
+        }
+        footer {
+            background-color: black;
+            padding: 25px 0px;
+            z-index: 100;
+        }
+        #video {
+            padding: 134px 0px;
+        }
+        #veja {
+            padding: 134px 0px 100px;
+        }
+        .input-modal {
+            padding: 28px 27px;
+        }
+        .botao {
+            width: 430px;
+            padding: 20px 17px;
+            &:after {
+                width: 50px;
+                height: 48px;
+                top: 7px;
+                right: 20px;
+            }
+        }
+        .setinha {
+            letter-spacing: 0.18em;
+            padding-left: 50px;
+            &:after {
+                top: -5px;
+                left: 3px;
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .risco {
+            &:after {
+                bottom: 0;
+                left: -30px;
+                width: 500px;
+                height: 77px;
+            }
+        }
+        #popup {
+            top: 5px;
+            &.active {
+                height: calc(100% - 20px);
+                overflow: auto;
+            }
+        }
+        .conteudo {
+            border-radius: 10px;
+            min-height: auto;
+            background-color: $amarelo;
+            background-repeat: no-repeat;
+            background-image: url('../img/icon/conteudo-esquerda.svg'), url('../img/icon/conteudo-direita.svg');
+            background-size: auto;
+            background-position: calc(100% - 26px) 22px, 26px 22px;
+            padding: 0px 40px;
+            padding-bottom: 0px;
+            margin-top: -66px;
+            height: 100%;
+            .estrutura {
+                &.active {
+                    padding: 103px 0px;
+                    width: 100%;
+                    min-height: 650px;
+                    &[data='3'] {
+                        padding-bottom: 30px;
+                        .div-para {
+                            min-height: 405px;
+                        }
+                    }
+                }
+            }
+            &.win {
+                background-image: url('../img/win.png');
+                background-position: top -90px center;
+            }
+        }
+        .respondeu {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 19px 48px;
+            border-radius: 5px;
+        }
+        #fundo {
+            top: 0;
+            left: 0;
+            width: 0px;
+            opacity: 0;
+            position: fixed;
+            background-color: black;
+            opacity: 0;
+            z-index: 150;
+            &.active {
+                opacity: 0.6;
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+        .transform {
+            transform: scale(0.8);
+        }
+        .desk {
+            height: 50px;
+        }
+        .voucher {
+            h3 {
+                padding: 2px 12px;
+            }
+        }
+        label.error {
+            font-size: 15px;
+        }
+    }
+    
+    @media screen and (min-width: $xxl) {
+        .botao {
+            width: auto;
+            padding-right: 164px;
+        }
+        .risco {
+            &:after {
+                left: -60px;
+            }
+        }
+        .container-custom {
+            max-width: 1400px;
+        }
+        .conteudo {
+            margin-top: 0px;
+            padding: 40px 123px;
+            height: 800px;
+            display: flex;
+            align-items: center;
+            flex-wrap: inherit;
+            .estrutura {
+                max-width: 0px;
+                &.active {
+                    max-width: 100%;
+                    padding: 0px;
+                    min-height: unset;
+                    &[data='3'] {
+                        padding-bottom: 0px;
+                        .div-para {
+                            min-height: 590px;
+                        }
+                    }
+                }
+            }
+            &.win {
+                background-position: top -38px center;
+            }
+        }
+        .transform {
+            transform: unset;
+        }
+        .desk {
+            height: auto;
+        }
+        #popup {
+            top: 25px;
+        }
+    }

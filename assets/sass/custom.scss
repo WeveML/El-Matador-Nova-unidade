@@ -1,0 +1,107 @@
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        color: white;
+        font-family: Lota;
+    }
+    
+    .upper {
+        text-transform: uppercase;
+    }
+    
+    .bold {
+        font-weight: bold;
+    }
+    
+    .sbold {
+        font-weight: 600;
+    }
+    
+    .normal {
+        font-weight: normal;
+    }
+    
+    .naratif {
+        font-family: Naratif;
+    }
+    
+    .ohno {
+        font-family: Ohno;
+        letter-spacing: 4px;
+    }
+    
+    .ls-018 {
+        letter-spacing: 0.18em;
+    }
+    
+    a {
+        color: unset;
+        &:hover {
+            color: unset;
+            text-decoration: none;
+        }
+    }
+    
+    .c-pointer {
+        cursor: pointer;
+    }
+    
+    .opa-5 {
+        opacity: 0.5;
+    }
+    
+    .btn {
+        font-family: Naratif;
+        font-size: 25px;
+        padding: 22px 72px;
+        text-align: center;
+        color: white;
+        background-color: $vermelho;
+        font-weight: bold;
+        letter-spacing: 2px;
+        border-radius: 10px;
+        &:disabled {
+            background-color: $preto;
+            &:hover {
+                background-color: $preto;
+            }
+        }
+        &:hover {
+            background-color: $vermelhoh;
+            color: unset;
+        }
+    }
+    /* enable Flickity by default */
+    
+    #slide-car:after {
+        content: 'flickity';
+        display: none;
+        /* hide :after */
+    }
+    
+    @media screen and ( min-width: 768px) {
+        /* disable Flickity for large devices */
+        #slide-car:after {
+            content: '';
+        }
+    }
+    
+    @keyframes tremer {
+        0% {
+            margin-left: -7px;
+        }
+        100% {
+            margin-left: -0px;
+        }
+    }
+    
+    @media screen and ( max-width: $sm) {
+        .wm-100 {
+            width: 100%;
+        }
+        .btn {
+            padding: 12px 72px;
+        }
+    }
